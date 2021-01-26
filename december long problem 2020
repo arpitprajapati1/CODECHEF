@@ -1,0 +1,377 @@
+P1
+Increasing COVID cases have created panic amongst the people of Chefland, so the government is starting to push for production of a vaccine. It has to report to the media about the exact date when vaccines will be available.
+
+There are two companies which are producing vaccines for COVID. Company A starts producing vaccines on day D1 and it can produce V1 vaccines per day. Company B starts producing vaccines on day D2 and it can produce V2 vaccines per day. Currently, we are on day 1.
+
+We need a total of P vaccines. How many days are required to produce enough vaccines? Formally, find the smallest integer d such that we have enough vaccines at the end of the day d.
+
+Input
+The first and only line of the input contains five space-separated integers D1, V1, D2, V2 and P.
+Output
+Print a single line containing one integer ― the smallest required number of days.
+
+Constraints
+1≤D1,V1,D2,V2≤100
+1≤P≤1,000
+Subtasks
+Subtask #1 (30 points): D1=D2=1
+Subtask #2 (70 points): original constraints
+
+Example Input 1
+1 2 1 3 14
+Example Output 1
+3
+Explanation
+Since D1=D2=1, we can produce V1+V2=5 vaccines per day. In 3 days, we produce 15 vaccines, which satisfies our requirement of 14 vaccines.
+
+Example Input 2
+5 4 2 10 100
+Example Output 2
+9
+Explanation
+There are 0 vaccines produced on the first day, 10 vaccines produced on each of days 2, 3 and 4, and 14 vaccines produced on the fifth and each subsequent day. In 9 days, it makes a total of 0+10⋅3+14⋅5=100 vaccines.
+
+
+
+P2
+
+
+You are given two positive integers A and B. Find the number of pairs of positive integers (X,Y) such that 1≤X≤A, 1≤Y≤B and X+Y is even.
+
+Input
+The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+The first and only line of each test case contains two space-separated integers A and B.
+Output
+For each test case, print a single line containing one integer ― the number of valid pairs.
+
+Constraints
+1≤T≤1,000
+1≤A,B≤109
+Subtasks
+Subtask #1 (10 points): A,B≤10
+Subtask #2 (10 points): A,B≤1,000
+Subtask #3 (80 points): original constraints
+
+Example Input
+4
+1 1
+2 3
+4 6
+8 9
+Example Output
+1
+3
+12
+36
+
+
+
+P3
+
+
+Finally, a COVID vaccine is out on the market and the Chefland government has asked you to form a plan to distribute it to the public as soon as possible. There are a total of N people with ages a1,a2,…,aN.
+
+There is only one hospital where vaccination is done and it is only possible to vaccinate up to D people per day. Anyone whose age is ≥80 or ≤9 is considered to be at risk.On each day, you may not vaccinate both a person who is at risk and a person who is not at risk. Find the smallest number of days needed to vaccinate everyone.
+Input
+The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+The first line of each test case contains two space-separated integers N and D.
+The second line contains N space-separated integers a1,a2,…,aN.
+Output
+For each test case, print a single line containing one integer ― the smallest required number of days.
+
+Constraints
+1≤T≤10
+1≤N≤104
+1≤D≤105
+1≤ai≤100 for each valid i
+Subtasks
+Subtask #1 (100 points): original constraints
+Example Input
+2
+N  D
+10 1
+10 20 30 40 50 60 90 80 100 1 // PEOPLE BETWEEN 80 AND 9 IS CONSIDERED TO BE NOT RISK 
+5 2							  // CHECK FOR D PEOPLE PER DAYS
+9 80 27 72 79				  // N IS NO OF SAME OUTPUT
+Example Output                //
+10
+3
+Explanation
+Example case 1: We do not need to worry about how the people are grouped, since only one person can be vaccinated in a single day. We require as many days as there are people.
+Example case 2: There are two people at risk and three people who are not at risk. One optimal strategy is to vaccinate the two people at risk on day 1 and the remaining three on the next 2 days.
+++
+
+P4
+You are given two positive integers N and K, where K≤N. Find a sequence A1,A2,…,AN such that:
+
+for each valid i, Ai is either i or −i
+there are exactly K values of i such that 1≤i≤N and A1+A2+…+Ai>0
+If there are multiple solutions, you may print any one of them. It can be proved that at least one solution always exists.
+
+Input
+The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+The first and only line of each test case contains two space-separated integers N and K.
+Output
+For each test case, print a single line containing N space-separated integers A1,A2,…,AN.
+
+Constraints
+1≤T≤1,000
+1≤K≤N≤1,000
+Subtasks
+Subtask #1 (10 points): N≤10
+Subtask #2 (90 points): original constraints
+
+Example Input
+1
+N K(K<=N)    //MUST HAVE N TERMS IN SERIES
+3 3
+Example Output
+1 2 3
+
+
+
+
+You are given a sequence A1,A2,…,AN and you have to perform the following operation exactly X times:
+
+Choose two integers i and j such that 1≤i<j≤N.
+Choose a non-negative integer p.
+Change Ai to Ai⊕2p, and change Aj to Aj⊕2p, where ⊕ denotes bitwise XOR.
+Find the lexicographically smallest sequence which can be obtained by performing this operation exactly X times.
+
+A sequence B1,B2,…,BN is said to be lexicographically smaller than a sequence C1,C2,…,CN if there is an index i such that Bi<Ci and for each valid j<i, Bj=Cj.
+
+Input
+The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+The first line of each test case contains two space-separated integers N and X.
+The second line contains N space-separated integers A1,A2,…,AN.
+Output
+For each test case, print a single line containing N space-separated integers ― the lexicographically smallest obtainable sequence.
+
+Constraints
+1≤T≤10
+2≤N≤105
+1≤X≤109
+1≤Ai≤109 for each valid i
+Subtasks
+Subtask #1 (30 points): N≤100
+Subtask #2 (70 points): original constraints    
+
+Example Input
+1
+3 3
+2 2 3
+Example Output
+0 0 3
+Explanation
+Example case 1: The original sequence is (2,2,3). Consider the following three operations:
+
+Choose i=1, j=2 and p=1. Then, A1 changes from 2 to 2⊕21=0 and similarly, A2 changes from 2 to 2⊕21=0. Now the sequence is (0,0,3).
+Next, choose i=1, j=2 and p=1. Then, A1 changes to 0⊕21=2 and A2 changes to 0⊕21=2. The sequence is (2,2,3).
+Next, again choose i=1, j=2 and p=1. Then, A1 changes to 2⊕21=0 and A2 changes to 2⊕21=0. The sequence is (0,0,3) again.
+We can check that after exactly 3 operations, this is the lexicographically smallest sequence we can obtain.
+
+
+
+
+
+You are given a rooted tree with N vertices (numbered 1 through N) and a prime number P. Vertex 1 is the root of the tree and for each v (2≤v≤N), the parent of vertex v is pv (pv<v).
+
+A vertex s is an ancestor of another vertex f if s lies on the path between 1 and f (in particular, f is its own ancestor). For two vertices u and v, let's define LCA(u,v) as the vertex s with the largest number which is an ancestor of both u and v. Similarly, for two vertices v and s, let Lv,s be the set of all vertices u such that s=LCA(u,v).
+
+Let's define a set AP containing all sequences (indexed from 1) with length N whose elements are integers between 0 and P−1 inclusive. For two sequences a,b∈AP, let's define an operation LCA-convolution as a sequence c=a∗b such that for each valid x,
+cx=(∑i=1N∑j∈Li,xaibj)modP.
+You are also given some sequence c∈AP. You have two tasks:
+
+Find the number of sequences a∈AP such that c=a∗a. Since this number can be large, compute it modulo 998,244,353.
+Find a sequence a∈AP such that c=a∗a (if it exists).
+Input
+The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+The first line of each test case contains two space-separated integers N and P.
+The second line contains N−1 space-separated integers p2,p3,…,pN.
+The third line contains N space-separated integers c1,c2,…,cN.
+Output
+For each test case, print two lines:
+
+The first of these lines should contain a single integer ― the number of sequences from the first task modulo 998,244,353.
+If there is no sequence a∈AP such that c=a∗a, the second line should contain the integer −1.
+Otherwise, the second line should contain N space-separated integers a1,a2,…,aN, where a∈AP and c=a∗a should hold. If there is more than one such sequence, you may find any one of them.
+Constraints
+1≤T≤105
+2≤N≤5⋅105
+3≤P≤109+9
+P is a prime
+1≤pi<i for each valid i
+0≤ci<P for each valid i
+the sum of N over all test cases does not exceed 5⋅105
+Subtasks
+Subtask 1 (10 points, 1 second time limit):
+
+T≤100
+N≤6
+P=3
+Subtask 2 (30 points, 1 second time limit):
+
+T≤100
+the sum of N over all test cases does not exceed 1,000
+Subtask 3 (60 points, 5 seconds time limit): original constraints
+
+Example Input
+3
+6 3
+1 1 2 3 2
+1 2 0 1 1 1
+5 3
+1 1 1 3
+2 1 0 2 1
+9 101
+1 1 2 3 2 4 3 5
+18 77 44 82 4 20 19 43 97
+Example Output
+32
+2 2 0 1 2 2
+0
+-1
+64
+3 70 5 76 20 11 25 12 81
+
+/*8546901008*/
+
+Two strings A and B are equivalent (denoted by A(XOR)B) if they have the same lengths and A can be transformed into B by performing the following operation zero or more times: choose a substring of A which contains '1' an even number of times and reverse this substring.
+
+You are given a binary string S. Find the number of different equivalence classes of the substrings of this string. In other words, find the smallest possible size of a set C of binary strings with the following property: for each non-empty string R which is a substring of S (including S itself), there is a string X∈C such that R∼X.
+
+Input
+The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+The first and only line of each test case contains a single string S with length N.
+Output
+For each test case, print a single line containing one integer ― the number of equivalence classes among the substrings of the given string.
+
+Constraints
+1≤T≤10
+1≤N≤1,000
+S contains only characters '0' and '1'
+Subtasks
+Subtask #1 (10 points): N≤10
+Subtask #2 (90 points): original constraints
+
+Example Input
+10
+00000
+10001
+10101
+01111
+11001
+01101
+10110
+10010
+10111
+11001
+Example Output
+5
+11
+8
+9
+12
+10
+10
+11
+11
+12
+
+
+
+
+
+
+You are given a set S, which is a subset of {1,2,…,N}.
+
+Consider a permutation P1,P2,…,PN of the integers 1 through N. The cost of this permutation is the number of indices i>1 such that Pi is divisible by Pi−1 and PiPi−1∈S.
+
+For each k between 0 and N−1 (inclusive), find the number of permutations with cost k. Since these numbers may be large, compute them modulo 998,244,353.
+
+Input
+The first line of the input contains a single integer N.
+The second line contains a binary string T with length N. For each valid i, the i-th character of T is '1' if i∈S or '0' otherwise.
+Output
+Print a single line containing N space-separated integers. For each k (0≤k<N), the k+1-th of these integers should be the number of permutations with cost k, modulo 998,244,353.
+
+Constraints
+1≤N≤40
+T contains only characters '0' and '1'
+Subtasks
+Subtask #1 (10 points): N≤15
+Subtask #2 (90 points): original constraints
+
+Example Input
+5
+10001
+Example Output
+96 24 0 0 0
+
+
+
+
+You are given an integer sequence A1,A2,…,AN. Find the number of integer sequences X1,X2,…,XN such that
+
+0≤Xi<239 for each valid i
+Xi≠Xj for each valid i≠j
+(X1⋅A1)+(X2⋅A2)+…+(XN⋅AN) is divisible by 239
+Since the answer may be large, compute it modulo 998,244,353.
+
+Input
+The first line of the input contains a single integer N.
+The second line contains N space-separated integers A1,A2,…,AN.
+Output
+Print a single line containing one integer ― the number of sequences satisfying all conditions modulo 998,244,353.
+
+Constraints
+1≤N≤20
+0≤Ai<239 for each valid i
+Subtasks
+Subtask #1 (10 points): N≤10
+Subtask #2 (10 points): N≤15
+Subtask #3 (80 points): original constraints
+
+Example Input
+3
+1 1 1
+Example Output
+56406
+
+
+
+
+You are given a matrix A of non-negative integers with N rows (numbered 1 through N) and N columns (numbered 1 through N). For each valid i and j, let's denote the element in the i-th row and j-th column by Ai,j.
+
+You need to find a matrix B with N+1 rows and N+1 columns (numbered similarly) such that:
+
+each element of this matrix is a digit between 0 and 9 (inclusive)
+Ai,j=Bi,j+Bi+1,j+Bi,j+1+Bi+1,j+1 for each valid i,j
+The matrix A is chosen in such a way that at least one solution exists. If there are multiple solutions, you may find any one of them.
+
+Input
+The first line of the input contains a single integer N.
+N lines follow. For each valid i, the i-th of these lines contains N space-separated integers Ai,1,Ai,2,…,Ai,N.
+Output
+Print N+1 lines. For each valid i, the i-th of these lines should contain N+1 characters Bi,1,Bi,2,…,Bi,N+1.
+
+Constraints
+1≤N≤100
+for the matrix A, at least one valid matrix B exists
+Subtasks
+Subtask #1 (10 points): N≤5
+Subtask #2 (90 points): original constraints
+
+Example Input
+2
+12 16
+24 28
+Example Output
+123
+456
+789
+
+
+
+
+
